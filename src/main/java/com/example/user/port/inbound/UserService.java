@@ -1,7 +1,9 @@
 package com.example.user.port.inbound;
 
-import com.example.user.adapter.inbound.dto.UserSignUp;
+
+import com.example.user.adapter.inbound.dto.UserSignUpReq;
+import com.example.user.adapter.inbound.dto.UserSignUpRes;
 
 public interface UserService {
-  UserSignUp.Response signUp(UserSignUp.Request request);
+  UserSignUpRes signUp(UserSignUpReq request);
 }

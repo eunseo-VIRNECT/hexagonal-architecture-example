@@ -1,6 +1,7 @@
 package com.example.user.adapter.inbound.controller;
 
-import com.example.user.adapter.inbound.dto.UserSignUp;
+import com.example.user.adapter.inbound.dto.UserSignUpReq;
+import com.example.user.adapter.inbound.dto.UserSignUpRes;
 import com.example.user.port.inbound.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,9 +16,8 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class UserController {
   private final UserService userService;
-
-  @PostMapping(path = "/signup")
-  public UserSignUp.Response signUp(@Valid @RequestBody UserSignUp.Request request){
-    return this.userService.signUp(request);
+  @PostMapping("/signup")
+  public UserSignUpRes signUp(@Valid @RequestBody UserSignUpReq request){
+    return userService.signUp(request);
   }
 }
